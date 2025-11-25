@@ -31,9 +31,9 @@ The workflow consists of four key components:
 
 The system uses input CSV files such as:
 
-- `feed.csv` → delivery points, demand, coordinates  
-- `priority_delivery.csv` → prioritized deliveries  
-- Additional data files as needed (see Variables section)
+- `producers.csv` → producers’ information
+- `feed.csv` → types of feeding
+- `routes.csv` → delivery points, coordinates, distances
 
 ### **2. Optimization Logic**
 
@@ -59,32 +59,16 @@ The optimized outputs include:
 
 Results are exported to files such as:
 
-- `routes.csv`  
-- `route.jpg` (map or visual plot of the optimized route)
+- `priority_delivery.csv` → list of prioritized deliveries 
+- `route.jpg` (visual plot of the optimized route and producers’ information)
 
 ---
 
 ## 3. Technologies Used
 
 - **Python**  
-- **Pandas** (data manipulation)  
+- **Pandas**
+- **Numpy**
 - **Geopy / Haversine** (distance calculation)  
-- **Jupyter Notebook**  
-- **Matplotlib / Folium** (optional visualization)  
-- **(optional)** OR-Tools, PuLP, or other solvers  
-
-Update this section depending on your actual packages.
-
----
-
-## 4. Data Structure / Variables
-
-Below is the recommended description of the project’s main datasets.
-
-| File | Key Columns | Description |
-|------|-------------|-------------|
-| **feed.csv** | `id`, `latitude`, `longitude`, `demand`, `capacity` | Main dataset with delivery locations and demand. |
-| **priority_delivery.csv** | `id`, `priority_level`, `deadline` | Defines priority deliveries. |
-| **routes.csv** | `route_id`, `sequence_of_points`, `vehicle_id`, `total_distance` | Final optimized output. |
-| **overview.csv** | _Fill in_ | General summary (if applicable). |
-
+- **Jupyter Notebook**
+- **PowerBi**
